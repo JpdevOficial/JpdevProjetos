@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio moderno de Jpdev - Desenvolvedor de scripts sobrenaturais, bots Discord e scripts FiveM.">
+  <meta name="author" content="JpdevOficial">
+  <title>Portfólio de Jpdev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0f1c;
+      color: #e0e6ed;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    body::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: #0f1626;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: #00aaff;
+      border-radius: 5px;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      background: #007bbb;
+    }
+
+    section::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    section::-webkit-scrollbar-track {
+      background: #1c2638;
+    }
+
+    section::-webkit-scrollbar-thumb {
+      background: #00aaff;
+      border-radius: 4px;
+    }
+
+    section::-webkit-scrollbar-thumb:hover {
+      background: #007bbb;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(180deg, #0f1626 0%, #1c2638 100%);
+      padding: 30px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00aaff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
+      }
+      to {
+        text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff;
+      }
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #e0e6ed;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 1.3rem;
+      padding: 12px 25px;
+      border-radius: 50px;
+      background: #1c2638;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a:hover {
+      background: #00aaff;
+      color: #0a0f1c;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+    }
+
+    /* Tabs */
+    .tab {
+      display: none;
+      padding: 40px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .tab.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .tab-buttons button {
+      background: #1c2638;
+      border: 2px solid #00aaff;
+      color: #e0e6ed;
+      padding: 12px 30px;
+      margin: 0 10px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tab-buttons button:hover {
+      background: #00aaff;
+      color: #0a0f1c;
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+    }
+
+    .tab-buttons button.active {
+      background: #00aaff;
+      color: #0a0f1c;
+    }
+
+    /* Portfolio Items */
+    .portfolio-item {
+      border: 1px solid #2e3b55;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      background: #1c2638;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 170, 255, 0.3);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-item h3 {
+      background: #2e3b55;
+      color: #00aaff;
+      padding: 15px;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .portfolio-item p {
+      padding: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0f1626;
+      color: #e0e6ed;
+      border-top: 1px solid #2e3b55;
+    }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #e0e6ed;
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+
+      .tab-buttons button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .portfolio-item h3 {
+        font-size: 1.2rem;
+      }
+
+      .portfolio-item p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfólio de Jpdev</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab('sobre')">Sobre Mim</button>
+      <button class="tab-btn" onclick="showTab('projetos')">Projetos</button>
+      <button class="tab-btn" onclick="showTab('contato')">Contato</button>
+    </div>
+
+    <section id="sobre" class="tab active">
+      <h2>Sobre Mim</h2>
+      <p>Eu sou Jpdev, um desenvolvedor apaixonado por criar soluções inovadoras e dinâmicas. Especializado em scripts sobrenaturais, bots para Discord e sistemas imersivos para servidores FiveM, transformo ideias em realidade com código.</p>
+    </section>
+
+    <section id="projetos" class="tab">
+      <h2>Meus Projetos</h2>
+      
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/800x400" alt="Script Sobrenatural">
+        <h3>Script Sobrenatural</h3>
+        <p>Um sistema revolucionário que introduz mecânicas sobrenaturais únicas para servidores FiveM, elevando a experiência dos jogadores.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/800x400" alt="Bot Discord">
+        <h3>Bot Discord</h3>
+        <p>Bots personalizados para Discord, projetados para gerenciar comunidades, automatizar tarefas e proporcionar interações únicas.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/800x400" alt="Script para FiveM">
+        <h3>Script para FiveM</h3>
+        <p>Sistemas exclusivos para servidores FiveM, oferecendo experiências imersivas e personalizadas para jogadores.</p>
+      </div>
+    </section>
+
+    <section id="contato" class="tab">
+      <h2>Contato</h2>
+      <p>Interessado em colaborar ou discutir um projeto? Entre em contato comigo:</p>
+      <p>Email: <a href="mailto:jpdev@example.com">jpdev@example.com</a></p>
+      <p>Discord: Jpdev#1234</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Jpdev. Todos os direitos reservados.</p>
+    <p>Feito com ❤️ por Jpdev</p>
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      const selectedTab = document.getElementById(tabId);
+      selectedTab.classList.add('active');
+      document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+  </script>
+</body>
+</html>
