@@ -57,23 +57,93 @@
       background: #007bbb;
     }
 
-    /* Header */
-    header {
-      background: linear-gradient(180deg, #0f1626 0%, #1c2638 100%);
-      padding: 30px 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
+    /* Side Navigation */
+    .side-nav {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    header h1 {
-      font-size: 3rem;
+    .side-nav button {
+      background: #1c2638;
+      border: 2px solid #00aaff;
+      color: #e0e6ed;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .side-nav button:hover {
+      background: #00aaff;
+      color: #0a0f1c;
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+    }
+
+    .side-nav button.active {
+      background: #00aaff;
+      color: #0a0f1c;
+    }
+
+    .side-nav button::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #1c2638;
+      color: #e0e6ed;
+      padding: 5px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+      margin-left: 10px;
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+
+    .side-nav button:hover::after {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Hero Section (Initial Interface) */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0f1626 0%, #1c2638 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
       color: #00aaff;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       animation: glow 2s ease-in-out infinite alternate;
+      margin-bottom: 20px;
     }
 
     @keyframes glow {
@@ -85,77 +155,126 @@
       }
     }
 
-    nav {
-      margin-top: 20px;
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 0.5s;
     }
 
-    nav a {
-      color: #e0e6ed;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 1.3rem;
-      padding: 12px 25px;
-      border-radius: 50px;
-      background: #1c2638;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    nav a:hover {
+    .hero .cta-button {
       background: #00aaff;
       color: #0a0f1c;
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .hero .cta-button:hover {
+      background: #e0e6ed;
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 170, 255, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(0, 170, 255, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 170, 255, 0);
+      }
+    }
+
+    /* Background Particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .particles span {
+      position: absolute;
+      background: #00aaff;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: float 15s infinite;
+    }
+
+    .particles span:nth-child(1) {
+      width: 10px;
+      height: 10px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .particles span:nth-child(2) {
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      left: 80%;
+      animation-delay: 3s;
+    }
+
+    .particles span:nth-child(3) {
+      width: 8px;
+      height: 8px;
+      top: 70%;
+      left: 30%;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
     }
 
     /* Tabs */
     .tab {
       display: none;
-      padding: 40px 20px;
+      padding: 40px 60px;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
-      max-height: 70vh;
+      max-height: 90vh;
       overflow-y: auto;
+      background: #0a0f1c;
     }
 
     .tab.active {
       display: block;
       opacity: 1;
       transform: translateY(0);
-    }
-
-    .tab-buttons {
-      display: flex;
-      justify-content: center;
-      margin: 30px 0;
-    }
-
-    .tab-buttons button {
-      background: #1c2638;
-      border: 2px solid #00aaff;
-      color: #e0e6ed;
-      padding: 12px 30px;
-      margin: 0 10px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
-    }
-
-    .tab-buttons button:hover {
-      background: #00aaff;
-      color: #0a0f1c;
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
-    }
-
-    .tab-buttons button.active {
-      background: #00aaff;
-      color: #0a0f1c;
     }
 
     /* Portfolio Items */
@@ -220,19 +339,27 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
+      .hero h1 {
+        font-size: 2.5rem;
       }
 
-      nav a {
-        margin: 0 10px;
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 90%;
+      }
+
+      .side-nav {
+        left: 10px;
+      }
+
+      .side-nav button {
+        width: 35px;
+        height: 35px;
         font-size: 1rem;
-        padding: 10px 20px;
       }
 
-      .tab-buttons button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+      .tab {
+        padding: 20px;
       }
 
       .portfolio-item h3 {
@@ -246,27 +373,37 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Portfólio de Jpdev</h1>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+  <!-- Side Navigation -->
+  <div class="side-nav">
+    <button class="nav-btn active" data-tooltip="Início" onclick="showTab('home')">I</button>
+    <button class="nav-btn" data-tooltip="Sobre" onclick="showTab('sobre')">S</button>
+    <button class="nav-btn" data-tooltip="Projetos" onclick="showTab('projetos')">P</button>
+    <button class="nav-btn" data-tooltip="Contato" onclick="showTab('contato')">C</button>
+  </div>
 
+  <!-- Main Content -->
   <main>
-    <div class="tab-buttons">
-      <button class="tab-btn active" onclick="showTab('sobre')">Sobre Mim</button>
-      <button class="tab-btn" onclick="showTab('projetos')">Projetos</button>
-      <button class="tab-btn" onclick="showTab('contato')">Contato</button>
-    </div>
+    <!-- Home Tab (Initial Interface) -->
+    <section id="home" class="tab active">
+      <div class="hero">
+        <div class="particles">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h1>Bem-vindo ao Portfólio de Jpdev</h1>
+        <p>Desenvolvedor apaixonado por scripts sobrenaturais, bots Discord e sistemas imersivos para FiveM. Explore meu trabalho e entre em contato!</p>
+        <a href="#projetos" class="cta-button" onclick="showTab('projetos')">Ver Projetos</a>
+      </div>
+    </section>
 
-    <section id="sobre" class="tab active">
+    <!-- Sobre Tab -->
+    <section id="sobre" class="tab">
       <h2>Sobre Mim</h2>
       <p>Eu sou Jpdev, um desenvolvedor apaixonado por criar soluções inovadoras e dinâmicas. Especializado em scripts sobrenaturais, bots para Discord e sistemas imersivos para servidores FiveM, transformo ideias em realidade com código.</p>
     </section>
 
+    <!-- Projetos Tab -->
     <section id="projetos" class="tab">
       <h2>Meus Projetos</h2>
       
@@ -289,6 +426,7 @@
       </div>
     </section>
 
+    <!-- Contato Tab -->
     <section id="contato" class="tab">
       <h2>Contato</h2>
       <p>Interessado em colaborar ou discutir um projeto? Entre em contato comigo:</p>
@@ -305,19 +443,20 @@
   <script>
     function showTab(tabId) {
       const tabs = document.querySelectorAll('.tab');
-      const buttons = document.querySelectorAll('.tab-btn');
+      const navButtons = document.querySelectorAll('.nav-btn');
 
       tabs.forEach(tab => {
         tab.classList.remove('active');
       });
 
-      buttons.forEach(button => {
+      navButtons.forEach(button => {
         button.classList.remove('active');
       });
 
       const selectedTab = document.getElementById(tabId);
       selectedTab.classList.add('active');
-      document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+
+      document.querySelector(`.nav-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
     }
   </script>
 </body>
