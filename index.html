@@ -8,7 +8,6 @@
   <title>Portfólio de Jpdev</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
@@ -30,7 +29,6 @@
       flex: 1 0 auto;
     }
 
-    /* Custom Scrollbar */
     body::-webkit-scrollbar {
       width: 10px;
     }
@@ -65,7 +63,6 @@
       background: #39a07c;
     }
 
-    /* Side Navigation */
     .side-nav {
       position: fixed;
       top: 50%;
@@ -129,7 +126,6 @@
       transition: opacity 0.3s ease;
     }
 
-    /* Header */
     header {
       background: linear-gradient(90deg, #16213e, #1a1a2e);
       padding: 20px 0;
@@ -147,7 +143,6 @@
       letter-spacing: 2px;
     }
 
-    /* Hero Section */
     .hero {
       height: 100vh;
       display: flex;
@@ -197,7 +192,6 @@
       box-shadow: 0 5px 15px rgba(78, 204, 163, 0.6);
     }
 
-    /* Gradient Squares Grid */
     .squares-grid {
       position: absolute;
       top: 0;
@@ -224,7 +218,6 @@
       opacity: 0.7;
     }
 
-    /* Tabs */
     .tab {
       display: none;
       padding: 60px 80px;
@@ -245,7 +238,6 @@
       transform: translateY(0);
     }
 
-    /* Contact Buttons */
     .contact-buttons {
       display: flex;
       flex-direction: column;
@@ -273,7 +265,6 @@
       box-shadow: 0 5px 15px rgba(78, 204, 163, 0.4);
     }
 
-    /* Portfolio Items */
     .portfolio-item {
       background: rgba(26, 26, 46, 0.9);
       border-radius: 15px;
@@ -316,7 +307,6 @@
       line-height: 1.8;
     }
 
-    /* Footer */
     footer {
       flex-shrink: 0;
       text-align: center;
@@ -338,7 +328,6 @@
       text-decoration: underline;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
@@ -394,7 +383,6 @@
   </style>
 </head>
 <body>
-  <!-- Side Navigation -->
   <div class="side-nav">
     <button class="nav-btn active" data-tooltip="Início" onclick="showTab('home')">I</button>
     <button class="nav-btn" data-tooltip="Sobre" onclick="showTab('sobre')">S</button>
@@ -402,14 +390,11 @@
     <button class="nav-btn" data-tooltip="Contato" onclick="showTab('contato')">C</button>
   </div>
 
-  <!-- Header -->
   <header>
     <h1>Portfólio de Jpdev</h1>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Home Tab (Initial Interface) -->
     <section id="home" class="tab active">
       <div class="hero">
         <div class="squares-grid" id="squaresGrid"></div>
@@ -419,13 +404,11 @@
       </div>
     </section>
 
-    <!-- Sobre Tab -->
     <section id="sobre" class="tab">
       <h2>Sobre Mim</h2>
       <p>Sou Jpdev, um desenvolvedor com foco em soluções inovadoras e de alta qualidade. Com expertise em scripts sobrenaturais, automação de bots para Discord e desenvolvimento de sistemas imersivos para FiveM, dedico-me a transformar ideias em projetos funcionais e impactantes. Minha paixão pela tecnologia me impulsiona a buscar excelência em cada detalhe.</p>
     </section>
 
-    <!-- Projetos Tab -->
     <section id="projetos" class="tab">
       <h2>Meus Projetos</h2>
       
@@ -448,7 +431,6 @@
       </div>
     </section>
 
-    <!-- Contato Tab -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <section id="contato" class="tab">
@@ -489,7 +471,6 @@
       document.querySelector(`.nav-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
     }
 
-    // Create the grid of squares
     const squaresGrid = document.getElementById('squaresGrid');
     const squareSize = 20;
     const gap = 5;
@@ -513,7 +494,6 @@
 
     createGrid();
 
-    // Handle mouse movement for interactive effect
     document.addEventListener('mousemove', (e) => {
       const squares = document.querySelectorAll('.square');
       const mouseX = e.clientX;
@@ -538,7 +518,6 @@
       });
     });
 
-    // Reset effect when mouse leaves
     document.querySelector('.hero').addEventListener('mouseleave', () => {
       const squares = document.querySelectorAll('.square');
       squares.forEach(square => {
