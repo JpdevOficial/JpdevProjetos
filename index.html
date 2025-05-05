@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio moderno de Jpdev - Desenvolvedor de scripts sobrenaturais, bots Discord e scripts FiveM.">
+  <meta name="description" content="Portfólio profissional de Jpdev - Especialista em scripts sobrenaturais, bots Discord e soluções FiveM.">
   <meta name="author" content="JpdevOficial">
   <title>Portfólio de Jpdev</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Reset básico */
     * {
@@ -17,9 +17,17 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #0a0f1c;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
       color: #e0e6ed;
       overflow-x: hidden;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1 0 auto;
     }
 
     /* Custom Scrollbar */
@@ -28,16 +36,16 @@
     }
 
     body::-webkit-scrollbar-track {
-      background: #0f1626;
+      background: #1a1a2e;
     }
 
     body::-webkit-scrollbar-thumb {
-      background: #00aaff;
+      background: #4ecca3;
       border-radius: 5px;
     }
 
     body::-webkit-scrollbar-thumb:hover {
-      background: #007bbb;
+      background: #39a07c;
     }
 
     section::-webkit-scrollbar {
@@ -45,16 +53,16 @@
     }
 
     section::-webkit-scrollbar-track {
-      background: #1c2638;
+      background: #16213e;
     }
 
     section::-webkit-scrollbar-thumb {
-      background: #00aaff;
+      background: #4ecca3;
       border-radius: 4px;
     }
 
     section::-webkit-scrollbar-thumb:hover {
-      background: #007bbb;
+      background: #39a07c;
     }
 
     /* Side Navigation */
@@ -70,8 +78,8 @@
     }
 
     .side-nav button {
-      background: #1c2638;
-      border: 2px solid #00aaff;
+      background: rgba(22, 33, 62, 0.8);
+      border: 2px solid #4ecca3;
       color: #e0e6ed;
       width: 40px;
       height: 40px;
@@ -80,23 +88,21 @@
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
-      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: visible;
     }
 
     .side-nav button:hover {
-      background: #00aaff;
-      color: #0a0f1c;
+      background: #4ecca3;
+      color: #1a1a2e;
       transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+      box-shadow: 0 5px 15px rgba(78, 204, 163, 0.4);
     }
 
     .side-nav button.active {
-      background: #00aaff;
-      color: #0a0f1c;
+      background: #4ecca3;
+      color: #1a1a2e;
     }
 
     .side-nav button::after {
@@ -105,7 +111,7 @@
       left: 100%;
       top: 50%;
       transform: translateY(-50%);
-      background: #1c2638;
+      background: rgba(22, 33, 62, 0.9);
       color: #e0e6ed;
       padding: 5px 10px;
       border-radius: 5px;
@@ -115,7 +121,6 @@
       transition: opacity 0.3s ease, visibility 0s linear 0.3s;
       margin-left: 10px;
       font-size: 0.9rem;
-      z-index: 10;
     }
 
     .side-nav button:hover::after {
@@ -124,7 +129,25 @@
       transition: opacity 0.3s ease;
     }
 
-    /* Hero Section (Initial Interface) */
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #16213e, #1a1a2e);
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #4ecca3;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Hero Section */
     .hero {
       height: 100vh;
       display: flex;
@@ -132,143 +155,88 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, #0f1626 0%, #1c2638 100%);
+      background: linear-gradient(135deg, #16213e, #1a1a2e);
       position: relative;
       overflow: hidden;
+      padding: 0 20px;
     }
 
     .hero h1 {
-      font-size: 4rem;
-      color: #00aaff;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #4ecca3;
       text-transform: uppercase;
       letter-spacing: 3px;
-      animation: glow 2s ease-in-out infinite alternate;
       margin-bottom: 20px;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
-      }
-      to {
-        text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff;
-      }
+      z-index: 2;
     }
 
     .hero p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards 0.5s;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 40px;
+      color: #d3d3d3;
+      z-index: 2;
     }
 
     .hero .cta-button {
-      background: #00aaff;
-      color: #0a0f1c;
-      padding: 15px 30px;
+      background: linear-gradient(90deg, #4ecca3, #39a07c);
+      color: #1a1a2e;
+      padding: 15px 40px;
       border-radius: 50px;
       text-decoration: none;
       font-size: 1.2rem;
+      font-weight: 600;
       transition: all 0.3s ease;
-      animation: pulse 2s infinite;
+      z-index: 2;
     }
 
     .hero .cta-button:hover {
-      background: #e0e6ed;
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+      background: linear-gradient(90deg, #39a07c, #2e8b57);
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(78, 204, 163, 0.6);
     }
 
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(0, 170, 255, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(0, 170, 255, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(0, 170, 255, 0);
-      }
-    }
-
-    /* Background Particles */
-    .particles {
+    /* Gradient Squares Grid */
+    .squares-grid {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 20px);
+      grid-template-rows: repeat(auto-fill, 20px);
+      gap: 5px;
+      z-index: 1;
+      opacity: 0.3;
     }
 
-    .particles span {
-      position: absolute;
-      background: #00aaff;
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: float 15s infinite;
+    .square {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(45deg, #4ecca3, #39a07c);
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .particles span:nth-child(1) {
-      width: 10px;
-      height: 10px;
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .particles span:nth-child(2) {
-      width: 15px;
-      height: 15px;
-      top: 50%;
-      left: 80%;
-      animation-delay: 3s;
-    }
-
-    .particles span:nth-child(3) {
-      width: 8px;
-      height: 8px;
-      top: 70%;
-      left: 30%;
-      animation-delay: 6s;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0.5;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) translateX(20px);
-        opacity: 0;
-      }
+    .square:hover {
+      transform: scale(1.2);
+      opacity: 0.7;
     }
 
     /* Tabs */
     .tab {
       display: none;
-      padding: 40px 60px;
+      padding: 60px 80px;
+      background: rgba(22, 33, 62, 0.9);
+      border-radius: 20px;
+      margin: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
-      max-height: 90vh;
+      max-height: 85vh;
       overflow-y: auto;
-      background: #0a0f1c;
     }
 
     .tab.active {
@@ -277,20 +245,48 @@
       transform: translateY(0);
     }
 
+    /* Contact Buttons */
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contact-button {
+      background: rgba(22, 33, 62, 0.8);
+      color: #4ecca3;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-align: center;
+      border: 2px solid #4ecca3;
+    }
+
+    .contact-button:hover {
+      background: #4ecca3;
+      color: #1a1a2e;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(78, 204, 163, 0.4);
+    }
+
     /* Portfolio Items */
     .portfolio-item {
-      border: 1px solid #2e3b55;
-      border-radius: 12px;
+      background: rgba(26, 26, 46, 0.9);
+      border-radius: 15px;
       overflow: hidden;
       margin-bottom: 30px;
-      background: #1c2638;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
+      border: 1px solid #2e3b55;
     }
 
     .portfolio-item:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 170, 255, 0.3);
+      box-shadow: 0 10px 20px rgba(78, 204, 163, 0.3);
     }
 
     .portfolio-item img {
@@ -304,47 +300,56 @@
     }
 
     .portfolio-item h3 {
-      background: #2e3b55;
-      color: #00aaff;
+      background: #16213e;
+      color: #4ecca3;
       padding: 15px;
       margin: 0;
       font-size: 1.5rem;
+      font-weight: 600;
+      border-bottom: 1px solid #2e3b55;
     }
 
     .portfolio-item p {
       padding: 20px;
       font-size: 1.1rem;
-      line-height: 1.6;
+      color: #d3d3d3;
+      line-height: 1.8;
     }
 
     /* Footer */
     footer {
+      flex-shrink: 0;
       text-align: center;
-      padding: 30px;
-      background: #0f1626;
+      padding: 40px 0;
+      background: #16213e;
       color: #e0e6ed;
       border-top: 1px solid #2e3b55;
+      font-size: 0.9rem;
     }
 
     footer a {
-      color: #00aaff;
+      color: #4ecca3;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     footer a:hover {
-      color: #e0e6ed;
+      color: #39a07c;
       text-decoration: underline;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
       .hero h1 {
         font-size: 2.5rem;
       }
 
       .hero p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         max-width: 90%;
       }
 
@@ -359,7 +364,7 @@
       }
 
       .tab {
-        padding: 20px;
+        padding: 20px 30px;
       }
 
       .portfolio-item h3 {
@@ -368,6 +373,22 @@
 
       .portfolio-item p {
         font-size: 1rem;
+      }
+
+      .squares-grid {
+        grid-template-columns: repeat(auto-fill, 15px);
+        grid-template-rows: repeat(auto-fill, 15px);
+        gap: 3px;
+      }
+
+      .square {
+        width: 15px;
+        height: 15px;
+      }
+
+      .contact-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
       }
     }
   </style>
@@ -381,26 +402,27 @@
     <button class="nav-btn" data-tooltip="Contato" onclick="showTab('contato')">C</button>
   </div>
 
+  <!-- Header -->
+  <header>
+    <h1>Portfólio de Jpdev</h1>
+  </header>
+
   <!-- Main Content -->
   <main>
     <!-- Home Tab (Initial Interface) -->
     <section id="home" class="tab active">
       <div class="hero">
-        <div class="particles">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <div class="squares-grid" id="squaresGrid"></div>
         <h1>Bem-vindo ao Portfólio de Jpdev</h1>
-        <p>Desenvolvedor apaixonado por scripts sobrenaturais, bots Discord e sistemas imersivos para FiveM. Explore meu trabalho e entre em contato!</p>
-        <a href="#projetos" class="cta-button" onclick="showTab('projetos')">Ver Projetos</a>
+        <p>Desenvolvedor especializado em scripts sobrenaturais, bots Discord e soluções imersivas para FiveM. Explore meu trabalho e vamos criar algo incrível juntos.</p>
+        <a href="#projetos" class="cta-button" onclick="showTab('projetos')">Explorar Projetos</a>
       </div>
     </section>
 
     <!-- Sobre Tab -->
     <section id="sobre" class="tab">
       <h2>Sobre Mim</h2>
-      <p>Eu sou Jpdev, um desenvolvedor apaixonado por criar soluções inovadoras e dinâmicas. Especializado em scripts sobrenaturais, bots para Discord e sistemas imersivos para servidores FiveM, transformo ideias em realidade com código.</p>
+      <p>Sou Jpdev, um desenvolvedor com foco em soluções inovadoras e de alta qualidade. Com expertise em scripts sobrenaturais, automação de bots para Discord e desenvolvimento de sistemas imersivos para FiveM, dedico-me a transformar ideias em projetos funcionais e impactantes. Minha paixão pela tecnologia me impulsiona a buscar excelência em cada detalhe.</p>
     </section>
 
     <!-- Projetos Tab -->
@@ -408,36 +430,44 @@
       <h2>Meus Projetos</h2>
       
       <div class="portfolio-item">
-        <img src="https://via.placeholder.com/800x400" alt="Script Sobrenatural">
+        <img src="https://i.pinimg.com/originals/d6/60/f0/d660f05d58164ba3b648838cd85d4561.gif" alt="Script Sobrenatural">
         <h3>Script Sobrenatural</h3>
-        <p>Um sistema revolucionário que introduz mecânicas sobrenaturais únicas para servidores FiveM, elevando a experiência dos jogadores.</p>
+        <p>Um sistema avançado que integra mecânicas sobrenaturais únicas em servidores FiveM, proporcionando experiências inovadoras para os jogadores.</p>
       </div>
 
       <div class="portfolio-item">
-        <img src="https://via.placeholder.com/800x400" alt="Bot Discord">
+        <img src="https://i.pinimg.com/originals/d6/60/f0/d660f05d58164ba3b648838cd85d4561.gif" alt="Bot Discord">
         <h3>Bot Discord</h3>
-        <p>Bots personalizados para Discord, projetados para gerenciar comunidades, automatizar tarefas e proporcionar interações únicas.</p>
+        <p>Bots personalizados para otimizar a gestão de comunidades, automação de tarefas e interações personalizadas em servidores Discord.</p>
       </div>
 
       <div class="portfolio-item">
-        <img src="https://via.placeholder.com/800x400" alt="Script para FiveM">
-        <h3>Script para FiveM</h3>
-        <p>Sistemas exclusivos para servidores FiveM, oferecendo experiências imersivas e personalizadas para jogadores.</p>
+        <img src="https://i.pinimg.com/originals/d6/60/f0/d660f05d58164ba3b648838cd85d4561.gif" alt="Script para FiveM">
+        <h3>Sistema FiveM</h3>
+        <p>Soluções personalizadas para servidores FiveM, com foco em imersão e funcionalidades exclusivas para uma experiência de jogo superior.</p>
       </div>
     </section>
 
     <!-- Contato Tab -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <section id="contato" class="tab">
       <h2>Contato</h2>
-      <p>Interessado em colaborar ou discutir um projeto? Entre em contato comigo:</p>
-      <p>Email: <a href="mailto:jpdev@example.com">jpdev@example.com</a></p>
-      <p>Discord: Jpdev#1234</p>
+      <p>Interessado em colaborar ou discutir um projeto? Estou à disposição para ajudar:</p>
+      <div class="contact-buttons">
+        <a href="jpdevoficial@gmail.com" class="contact-button">
+          <i class="fa-solid fa-envelope"></i> Enviar Email
+        </a>
+        <a href="https://discord.gg/zaDg52dQpB" target="_blank" class="contact-button">
+          <i class="fa-brands fa-discord"></i> Discord: Jpdev#1234
+        </a>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Jpdev. Todos os direitos reservados.</p>
-    <p>Feito com ❤️ por Jpdev</p>
+    <p>Desenvolvido com ❤️ por Jpdev | <a href="jpdevoficial@gmail.com">Entre em Contato</a></p>
   </footer>
 
   <script>
@@ -458,6 +488,65 @@
 
       document.querySelector(`.nav-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
     }
+
+    // Create the grid of squares
+    const squaresGrid = document.getElementById('squaresGrid');
+    const squareSize = 20;
+    const gap = 5;
+
+    function createGrid() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const cols = Math.floor(width / squareSize);
+      const rows = Math.floor(height / squareSize);
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const square = document.createElement('div');
+          square.className = 'square';
+          square.dataset.row = row;
+          square.dataset.col = col;
+          squaresGrid.appendChild(square);
+        }
+      }
+    }
+
+    createGrid();
+
+    // Handle mouse movement for interactive effect
+    document.addEventListener('mousemove', (e) => {
+      const squares = document.querySelectorAll('.square');
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      squares.forEach(square => {
+        const rect = square.getBoundingClientRect();
+        const squareCenterX = rect.left + rect.width / 2;
+        const squareCenterY = rect.top + rect.height / 2;
+
+        const distance = Math.sqrt(
+          Math.pow(mouseX - squareCenterX, 2) +
+          Math.pow(mouseY - squareCenterY, 2)
+        );
+
+        const maxDistance = 150;
+        const scale = Math.max(1, 1.2 - (distance / maxDistance));
+        const opacity = Math.max(0.3, 0.7 - (distance / maxDistance));
+
+        square.style.transform = `scale(${scale})`;
+        square.style.opacity = opacity;
+      });
+    });
+
+    // Reset effect when mouse leaves
+    document.querySelector('.hero').addEventListener('mouseleave', () => {
+      const squares = document.querySelectorAll('.square');
+      squares.forEach(square => {
+        square.style.transform = 'scale(1)';
+        square.style.opacity = 0.3;
+      });
+    });
   </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93a89e90da4cbd5e',t:'MTc0NjM2ODIyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
