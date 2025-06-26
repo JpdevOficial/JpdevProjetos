@@ -3,529 +3,465 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio profissional de Jpdev - Especialista em scripts sobrenaturais, bots Discord e soluções FiveM.">
+  <meta name="description" content="Portfólio profissional de Jpdev - Inovação em bots, scripts e produtos digitais.">
   <meta name="author" content="JpdevOficial">
-  <title>Portfólio de Jpdev</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Jpdev | Portfólio & Produtos</title>
+  <!-- <blockquote class="imgur-embed-pub" lang="en" data-id="wGp7rF6"><a href="https://imgur.com/wGp7rF6">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * {
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      color: #e0e6ed;
+      font-family: 'Montserrat', sans-serif;
+      background: #181c24;
+      color: #fff;
+      min-height: 100vh;
       overflow-x: hidden;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
+    }
+    body {
+      position: relative;
       min-height: 100vh;
     }
-
-    main {
-      flex: 1 0 auto;
-    }
-
-    body::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    body::-webkit-scrollbar-track {
-      background: #1a1a2e;
-    }
-
-    body::-webkit-scrollbar-thumb {
-      background: #4ecca3;
-      border-radius: 5px;
-    }
-
-    body::-webkit-scrollbar-thumb:hover {
-      background: #39a07c;
-    }
-
-    section::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    section::-webkit-scrollbar-track {
-      background: #16213e;
-    }
-
-    section::-webkit-scrollbar-thumb {
-      background: #4ecca3;
-      border-radius: 4px;
-    }
-
-    section::-webkit-scrollbar-thumb:hover {
-      background: #39a07c;
-    }
-
-    .side-nav {
+    #bg-particles {
       position: fixed;
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .main-nav {
+      position: fixed;
+      top: 0; left: 0; width: 100vw;
+      background: rgba(24,28,36,0.98);
       display: flex;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 1000;
-    }
-
-    .side-nav button {
-      background: rgba(22, 33, 62, 0.8);
-      border: 2px solid #4ecca3;
-      color: #e0e6ed;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .side-nav button:hover {
-      background: #4ecca3;
-      color: #1a1a2e;
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(78, 204, 163, 0.4);
-    }
-
-    .side-nav button.active {
-      background: #4ecca3;
-      color: #1a1a2e;
-    }
-
-    .side-nav button::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(22, 33, 62, 0.9);
-      color: #e0e6ed;
-      padding: 5px 10px;
-      border-radius: 5px;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-      margin-left: 10px;
-      font-size: 0.9rem;
-    }
-
-    .side-nav button:hover::after {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0.3s ease;
-    }
-
-    header {
-      background: linear-gradient(90deg, #16213e, #1a1a2e);
-      padding: 20px 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 900;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #4ecca3;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #16213e, #1a1a2e);
-      position: relative;
-      overflow: hidden;
-      padding: 0 20px;
+      gap: 40px;
+      height: 64px;
+      box-shadow: 0 2px 16px rgba(78,204,163,0.08);
+      z-index: 10;
     }
-
-    .hero h1 {
-      font-size: 3rem;
+    .main-nav .nav-link {
+      color: #fff;
       font-weight: 700;
-      color: #4ecca3;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-      z-index: 2;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin-bottom: 40px;
-      color: #d3d3d3;
-      z-index: 2;
-    }
-
-    .hero .cta-button {
-      background: linear-gradient(90deg, #4ecca3, #39a07c);
-      color: #1a1a2e;
-      padding: 15px 40px;
-      border-radius: 50px;
+      font-size: 1.1rem;
       text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      padding: 10px 24px;
+      border-radius: 24px;
+      transition: background 0.2s, color 0.2s;
+      position: relative;
+      letter-spacing: 1px;
+    }
+    .main-nav .nav-link.active,
+    .main-nav .nav-link:hover {
+      background: linear-gradient(90deg, #4ecca3 60%, #5865F2 100%);
+      color: #181c24;
+      box-shadow: 0 2px 12px rgba(78,204,163,0.18);
+    }
+    .container {
+      margin-top: 90px;
+      margin-bottom: 40px;
+      max-width: 1200px;
+      padding: 0 24px;
+      width: 100%;
       z-index: 2;
+      position: relative;
     }
-
-    .hero .cta-button:hover {
-      background: linear-gradient(90deg, #39a07c, #2e8b57);
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(78, 204, 163, 0.6);
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: #4ecca3;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(78,204,163,0.10);
     }
-
-    .squares-grid {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+    .flip-card {
+      background: transparent;
+      width: 100%;
+      height: 340px;
+      perspective: 1200px;
+      border-radius: 20px;
+    }
+    .flip-card-inner {
+      position: relative;
       width: 100%;
       height: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 20px);
-      grid-template-rows: repeat(auto-fill, 20px);
-      gap: 5px;
-      z-index: 1;
-      opacity: 0.3;
-    }
-
-    .square {
-      width: 20px;
-      height: 20px;
-      background: linear-gradient(45deg, #4ecca3, #39a07c);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .square:hover {
-      transform: scale(1.2);
-      opacity: 0.7;
-    }
-
-    .tab {
-      display: none;
-      padding: 60px 80px;
-      background: rgba(22, 33, 62, 0.9);
+      transition: transform 0.7s cubic-bezier(.4,2,.6,1);
+      transform-style: preserve-3d;
       border-radius: 20px;
-      margin: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      max-height: 85vh;
-      overflow-y: auto;
     }
-
-    .tab.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
+    .flip-card:hover .flip-card-inner,
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
     }
-
-    .contact-buttons {
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%; height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(78,204,163,0.13);
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
+      background: rgba(34, 40, 49, 0.92);
+      transition: box-shadow 0.2s;
     }
-
-    .contact-button {
-      background: rgba(22, 33, 62, 0.8);
+    .flip-card-front img {
+      width: 80px; height: 80px; object-fit: cover; border-radius: 16px; margin-bottom: 18px;
+      box-shadow: 0 2px 12px rgba(78,204,163,0.18);
+    }
+    .flip-card-front h3 {
+      font-size: 1.3rem;
       color: #4ecca3;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
       text-align: center;
-      border: 2px solid #4ecca3;
     }
-
-    .contact-button:hover {
-      background: #4ecca3;
-      color: #1a1a2e;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(78, 204, 163, 0.4);
-    }
-
-    .portfolio-item {
-      background: rgba(26, 26, 46, 0.9);
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 30px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      border: 1px solid #2e3b55;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(78, 204, 163, 0.3);
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .portfolio-item h3 {
-      background: #16213e;
-      color: #4ecca3;
-      padding: 15px;
-      margin: 0;
-      font-size: 1.5rem;
-      font-weight: 600;
-      border-bottom: 1px solid #2e3b55;
-    }
-
-    .portfolio-item p {
-      padding: 20px;
-      font-size: 1.1rem;
-      color: #d3d3d3;
-      line-height: 1.8;
-    }
-
-    footer {
-      flex-shrink: 0;
-      text-align: center;
-      padding: 40px 0;
-      background: #16213e;
+    .flip-card-front p {
       color: #e0e6ed;
-      border-top: 1px solid #2e3b55;
-      font-size: 0.9rem;
+      font-size: 1.05rem;
+      text-align: center;
+      margin-bottom: 0;
     }
-
-    footer a {
+    .flip-card-back {
+      background: linear-gradient(135deg, #5865F2 60%, #4ecca3 100%);
+      color: #181c24;
+      transform: rotateY(180deg);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 8px 32px 0 rgba(88,101,242,0.13);
+    }
+    .flip-card-back .back-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .flip-card-back .back-desc {
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+    .flip-card-back .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #181c24;
       color: #4ecca3;
+      font-weight: 700;
+      font-size: 1.08rem;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 28px;
       text-decoration: none;
-      transition: color 0.3s ease;
+      box-shadow: 0 4px 16px rgba(24,28,36,0.18);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
     }
-
-    footer a:hover {
-      color: #39a07c;
-      text-decoration: underline;
+    .flip-card-back .back-link:hover {
+      background: #fff;
+      color: #5865F2;
+      transform: scale(1.07);
     }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-        max-width: 90%;
-      }
-
-      .side-nav {
-        left: 10px;
-      }
-
-      .side-nav button {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-      }
-
-      .tab {
-        padding: 20px 30px;
-      }
-
-      .portfolio-item h3 {
-        font-size: 1.2rem;
-      }
-
-      .portfolio-item p {
-        font-size: 1rem;
-      }
-
-      .squares-grid {
-        grid-template-columns: repeat(auto-fill, 15px);
-        grid-template-rows: repeat(auto-fill, 15px);
-        gap: 3px;
-      }
-
-      .square {
-        width: 15px;
-        height: 15px;
-      }
-
-      .contact-button {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-      }
+    .about-section {
+      background: rgba(34,40,49,0.92);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(78,204,163,0.13);
+      padding: 40px 28px;
+      margin-bottom: 48px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-section h2 {
+      color: #4ecca3;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .about-section p {
+      color: #e0e6ed;
+      font-size: 1.13rem;
+      line-height: 1.7;
+    }
+    .contact-section {
+      background: rgba(34,40,49,0.92);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(78,204,163,0.13);
+      padding: 40px 28px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 48px auto;
+    }
+    .contact-section h2 {
+      color: #4ecca3;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .contact-button {
+      background: linear-gradient(90deg, #4ecca3 60%, #5865F2 100%);
+      color: #181c24;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 28px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(78,204,163,0.13);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .contact-button:hover {
+      background: #fff;
+      color: #5865F2;
+      transform: scale(1.07);
+    }
+    footer {
+      text-align: center;
+      padding: 32px 0 16px 0;
+      background: transparent;
+      color: #e0e6ed;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      z-index: 2;
+      position: relative;
+    }
+    @media (max-width: 700px) {
+      .main-nav { gap: 10px; height: 54px; }
+      .main-nav .nav-link { font-size: 0.98rem; padding: 8px 12px; }
+      .container { margin-top: 70px; }
+      .grid-cards { gap: 18px; }
+      .flip-card { height: 270px; }
+      .about-section, .contact-section { padding: 22px 8px; }
     }
   </style>
 </head>
 <body>
-  <div class="side-nav">
-    <button class="nav-btn active" data-tooltip="Início" onclick="showTab('home')">I</button>
-    <button class="nav-btn" data-tooltip="Sobre" onclick="showTab('sobre')">S</button>
-    <button class="nav-btn" data-tooltip="Projetos" onclick="showTab('projetos')">P</button>
-    <button class="nav-btn" data-tooltip="Contato" onclick="showTab('contato')">C</button>
+  <canvas id="bg-particles"></canvas>
+  <nav class="main-nav">
+    <a href="#" class="nav-link active" onclick="showSection('home', event)"><i class="fa-solid fa-house"></i> Início</a>
+    <a href="#" class="nav-link" onclick="showSection('produtos', event)"><i class="fa-solid fa-box"></i> Produtos</a>
+    <a href="#" class="nav-link" onclick="showSection('sobre', event)"><i class="fa-solid fa-user"></i> Sobre</a>
+    <a href="#" class="nav-link" onclick="showSection('contato', event)"><i class="fa-solid fa-envelope"></i> Contato</a>
+  </nav>
+  <div class="container">
+    <section id="home-section" class="main-section">
+      <h1 class="section-title">Bem-vindo ao Portfólio de Jpdev</h1>
+      <div class="grid-cards">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://cdn.discordapp.com/attachments/1373216173046366258/1387617758107275374/image.png?ex=685dff3e&is=685cadbe&hm=d8bd696c1cf81929a36023f12e5757810661a08dcd8c482eb4ff1b15ba8bf527&" alt="Npc attack Sistema">
+              <h3>Npc attack Sistema</h3>
+              <p>Experiências únicas e imersivas para servidores FiveM.</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-title">Mais detalhes</div>
+              <div class="back-desc">Sistema avançado com mecânicas de Npc ou Ped para FiveM.</div>
+              <a href="https://discordapp.com/channels/1304630443114500116/1386448593568923848" target="_blank" class="back-link">
+                <i class="fa-brands fa-discord"></i> Ver no Discord
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://cdn.discordapp.com/attachments/1373216173046366258/1385481835043098705/Jpdev_Weather_System.png?ex=685d7a42&is=685c28c2&hm=052d2972e6950f130761b4a713c49620d26498dbe21e1c3251a646a1e7162206&" alt="Sistema Climatico Completo">
+              <h3>Sistema Climatico</h3>
+              <p>Sistema de Climas Completo para servidores FiveM.</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-title">Mais detalhes</div>
+              <div class="back-desc">O Melhor em controle de Climas Para Servidores de Fivem, que buscam inovação.</div>
+              <a href="https://discordapp.com/channels/1304630443114500116/1386447269565435944" target="_blank" class="back-link">
+                <i class="fa-brands fa-discord"></i> Ver Produto
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://cdn.discordapp.com/attachments/1338539016139833404/1380975574209663167/Black_Gold_Luxury_Page_Border_Double-Sided_Poster_1587_x_1200_px_1.png?ex=685d903a&is=685c3eba&hm=ea875ba42c25fbcefe276b0bc9d6291fa864fd5ca6b275df1c42d6446c93cf6d&" alt="Anuncios Ingame">
+              <h3>sistema de anuncios</h3>
+              <p>Funcionalidades exclusivas para servidores de alto nível.</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-title">Mais detalhes</div>
+              <div class="back-desc">Um Sistema Completo de Anuncios para servidores de alto nível.</div>
+              <a href="https://discord.com/channels/123456789012345678/998877665544332211" target="_blank" class="back-link">
+                <i class="fa-brands fa-discord"></i> Comprar Agora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="produtos-section" class="main-section" style="display:none;">
+      <h1 class="section-title">Produtos em Destaque</h1>
+      <div class="grid-cards">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="VIP FiveM" />
+              <h3>VIP FiveM Exclusivo</h3>
+              <p>Recursos premium e suporte dedicado.</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-title">Acesse via Discord</div>
+              <div class="back-desc">Entre no canal de vendas e adquira seu VIP.</div>
+              <a href="https://discord.com/channels/123456789012345678/987654321098765432" target="_blank" class="back-link">
+                <i class="fa-brands fa-discord"></i> Comprar no Discord
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://cdn-icons-png.flaticon.com/512/5968/5968892.png" alt="Bot Moderador PRO" />
+              <h3>Bot Moderador PRO</h3>
+              <p>Automatize sua comunidade com comandos avançados.</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-title">Produto no Discord</div>
+              <div class="back-desc">Adquira diretamente no canal de vendas.</div>
+              <a href="https://discord.com/channels/123456789012345678/112233445566778899" target="_blank" class="back-link">
+                <i class="fa-brands fa-discord"></i> Ver Produto
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Pack Scripts Sobrenaturais" />
+              <h3>Pack Scripts Sobrenaturais</h3>
+              <p>Pacote especial para experiências únicas.</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-title">Compre no Discord</div>
+              <div class="back-desc">Link direto para compra no canal.</div>
+              <a href="https://discord.com/channels/123456789012345678/998877665544332211" target="_blank" class="back-link">
+                <i class="fa-brands fa-discord"></i> Comprar Agora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="sobre-section" class="main-section" style="display:none;">
+      <div class="about-section">
+        <h2>Sobre Mim</h2>
+        <p>Sou Jpdev, apaixonado por tecnologia e inovação. Especialista em scripts, bots e soluções digitais para Discord e FiveM. Transformo ideias em experiências únicas e funcionais, sempre buscando excelência e criatividade em cada projeto.</p>
+      </div>
+    </section>
+    <section id="contato-section" class="main-section" style="display:none;">
+      <div class="contact-section">
+        <h2>Contato</h2>
+        <p>Quer colaborar, tirar dúvidas ou adquirir um produto? Fale comigo:</p>
+        <div class="contact-buttons">
+          <a href="mailto:jpdevoficial@gmail.com" class="contact-button">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+          <a href="https://discord.gg/zaDg52dQpB" target="_blank" class="contact-button">
+            <i class="fa-brands fa-discord"></i> Discord
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <header>
-    <h1>Portfólio de Jpdev</h1>
-  </header>
-
-  <main>
-    <section id="home" class="tab active">
-      <div class="hero">
-        <div class="squares-grid" id="squaresGrid"></div>
-        <h1>Bem-vindo ao Portfólio de Jpdev</h1>
-        <p>Desenvolvedor especializado em scripts sobrenaturais, bots Discord e soluções imersivas para FiveM. Explore meu trabalho e vamos criar algo incrível juntos.</p>
-        <a href="#projetos" class="cta-button" onclick="showTab('projetos')">Explorar Projetos</a>
-      </div>
-    </section>
-
-    <section id="sobre" class="tab">
-      <h2>Sobre Mim</h2>
-      <p>Sou Jpdev, um desenvolvedor com foco em soluções inovadoras e de alta qualidade. Com expertise em scripts sobrenaturais, automação de bots para Discord e desenvolvimento de sistemas imersivos para FiveM, dedico-me a transformar ideias em projetos funcionais e impactantes. Minha paixão pela tecnologia me impulsiona a buscar excelência em cada detalhe.</p>
-    </section>
-
-    <section id="projetos" class="tab">
-      <h2>Meus Projetos</h2>
-      
-      <div class="portfolio-item">
-        <img src="https://i.pinimg.com/originals/d6/60/f0/d660f05d58164ba3b648838cd85d4561.gif" alt="Script Sobrenatural">
-        <h3>Script Sobrenatural</h3>
-        <p>Um sistema avançado que integra mecânicas sobrenaturais únicas em servidores FiveM, proporcionando experiências inovadoras para os jogadores.</p>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="https://i.pinimg.com/originals/d6/60/f0/d660f05d58164ba3b648838cd85d4561.gif" alt="Bot Discord">
-        <h3>Bot Discord</h3>
-        <p>Bots personalizados para otimizar a gestão de comunidades, automação de tarefas e interações personalizadas em servidores Discord.</p>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="https://i.pinimg.com/originals/d6/60/f0/d660f05d58164ba3b648838cd85d4561.gif" alt="Script para FiveM">
-        <h3>Sistema FiveM</h3>
-        <p>Soluções personalizadas para servidores FiveM, com foco em imersão e funcionalidades exclusivas para uma experiência de jogo superior.</p>
-      </div>
-    </section>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <section id="contato" class="tab">
-      <h2>Contato</h2>
-      <p>Interessado em colaborar ou discutir um projeto? Estou à disposição para ajudar:</p>
-      <div class="contact-buttons">
-        <a href="jpdevoficial@gmail.com" class="contact-button">
-          <i class="fa-solid fa-envelope"></i> Enviar Email
-        </a>
-        <a href="https://discord.gg/zaDg52dQpB" target="_blank" class="contact-button">
-          <i class="fa-brands fa-discord"></i> Discord: Jpdev#1234
-        </a>
-      </div>
-    </section>
-  </main>
-
   <footer>
     <p>© 2025 Jpdev. Todos os direitos reservados.</p>
-    <p>Desenvolvido com ❤️ por Jpdev | <a href="jpdevoficial@gmail.com">Entre em Contato</a></p>
+    <p>Feito com <span style="color:#4ecca3;">&#10084;&#65039;</span> | <a href="mailto:jpdevoficial@gmail.com">Contato</a></p>
   </footer>
-
   <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab');
-      const navButtons = document.querySelectorAll('.nav-btn');
-
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-      });
-
-      navButtons.forEach(button => {
-        button.classList.remove('active');
-      });
-
-      const selectedTab = document.getElementById(tabId);
-      selectedTab.classList.add('active');
-
-      document.querySelector(`.nav-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
+    // Navegação dinâmica
+    function showSection(section, e) {
+      if(e) e.preventDefault();
+      document.querySelectorAll('.main-section').forEach(s => s.style.display = 'none');
+      document.getElementById(section + '-section').style.display = '';
+      document.querySelectorAll('.main-nav .nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelector('.main-nav .nav-link[onclick*="' + section + '"]').classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-
-    const squaresGrid = document.getElementById('squaresGrid');
-    const squareSize = 20;
-    const gap = 5;
-
-    function createGrid() {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      const cols = Math.floor(width / squareSize);
-      const rows = Math.floor(height / squareSize);
-
-      for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < cols; col++) {
-          const square = document.createElement('div');
-          square.className = 'square';
-          square.dataset.row = row;
-          square.dataset.col = col;
-          squaresGrid.appendChild(square);
-        }
+    // Flip card touch para mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.flip-card').forEach(card => {
+        card.addEventListener('touchstart', function() {
+          card.classList.toggle('flipped');
+        });
+      });
+    });
+    // Animação de partículas de fundo
+    const canvas = document.getElementById('bg-particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    function createParticles() {
+      particles = [];
+      for(let i=0;i<60;i++) {
+        particles.push({
+          x: Math.random()*canvas.width,
+          y: Math.random()*canvas.height,
+          r: Math.random()*2+1,
+          dx: (Math.random()-0.5)*0.7,
+          dy: (Math.random()-0.5)*0.7,
+          color: Math.random()>0.5 ? '#4ecca3' : '#5865F2'
+        });
       }
     }
-
-    createGrid();
-
-    document.addEventListener('mousemove', (e) => {
-      const squares = document.querySelectorAll('.square');
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
-
-      squares.forEach(square => {
-        const rect = square.getBoundingClientRect();
-        const squareCenterX = rect.left + rect.width / 2;
-        const squareCenterY = rect.top + rect.height / 2;
-
-        const distance = Math.sqrt(
-          Math.pow(mouseX - squareCenterX, 2) +
-          Math.pow(mouseY - squareCenterY, 2)
-        );
-
-        const maxDistance = 150;
-        const scale = Math.max(1, 1.2 - (distance / maxDistance));
-        const opacity = Math.max(0.3, 0.7 - (distance / maxDistance));
-
-        square.style.transform = `scale(${scale})`;
-        square.style.opacity = opacity;
-      });
-    });
-
-    document.querySelector('.hero').addEventListener('mouseleave', () => {
-      const squares = document.querySelectorAll('.square');
-      squares.forEach(square => {
-        square.style.transform = 'scale(1)';
-        square.style.opacity = 0.3;
-      });
-    });
+    function animateParticles() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,2*Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = 0.5;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        p.x += p.dx;
+        p.y += p.dy;
+        if(p.x<0||p.x>canvas.width) p.dx*=-1;
+        if(p.y<0||p.y>canvas.height) p.dy*=-1;
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    createParticles();
+    animateParticles();
+    window.addEventListener('resize', createParticles);
+    
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93a89e90da4cbd5e',t:'MTc0NjM2ODIyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
-</html>
